@@ -2,7 +2,7 @@ import axios from "axios";
 import { isNull } from "lodash";
 
 export const axiosInstance = axios.create({
-  baseURL: "http://127.0.0.1:5000",
+  baseURL: "https://flask-itt.herokuapp.com",
   timeout: 600000,
   headers: {
     Accept: "application/json",
