@@ -1,0 +1,13 @@
+{
+    "exclude": ["node_modules"],
+    "compilerOptions": {
+      "baseUrl": "src",
+      "paths": {
+        "components/*": ["/components/*"],
+        "containers/*": ["/containers/*"],
+        "utils/": ["/src/utils/*"],
+        "utils": ["/src/utils/index"]
+      }
+    }
+  }
+  
