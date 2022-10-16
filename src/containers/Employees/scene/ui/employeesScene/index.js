@@ -88,7 +88,7 @@ export const EmployeesScene = (props) => {
             </styled.EmployeeWrapper>
           ))}
         </styled.EmployeesList>
-        {Boolean(pagination.pages) && (
+        {pagination.pages > 1 && (
           <styled.ActionsWrapper>
             <styled.Actions>
               <Button

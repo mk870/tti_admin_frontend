@@ -44,12 +44,15 @@ export const Count = styled.div`
 export const EmployeesWrapper = styled.div`
   width: 96rem;
   margin: 0 auto;
-  /* position: relative; */
+  position: relative;
+  height: 100%;
+  padding-bottom: 10rem;
 `;
 
 export const EmployeesList = styled.div`
   overflow-y: auto;
-  max-height: 68rem;
+  height: 100%;
+  padding-bottom: 5rem;
 `;
 
 export const EmployeeWrapper = styled.div`
@@ -89,15 +92,16 @@ export const ItemValue = styled.div`
 
 export const ActionsWrapper = styled.div`
   position: absolute;
-  bottom: 5rem;
+  bottom: 0;
   left: 0;
   right: 0;
 `;
 
 export const Actions = styled.div`
   margin: 0 auto;
-  width: 62rem;
+  width: 33rem;
   text-align: center;
+  background: ${Colors.white};
 `;
 
 export const EmployeeButton = styled(ButtonBase)`

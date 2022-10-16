@@ -21,6 +21,7 @@ export const Header = styled.div`
 export const FormWrapper = styled.div`
   margin: 0 auto;
   width: 27rem;
+  padding-bottom: 15rem;
 `;
 
 export const Actions = styled.div`
