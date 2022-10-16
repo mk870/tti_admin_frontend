@@ -1,10 +1,12 @@
 import styled from "styled-components";
+
 import { Colors } from "components/elements/ui/styles";
 
 export const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   background: rgba(231, 218, 154, 0.39);
+  overflow: auto;
 `;
 
 export const Header = styled.div`
