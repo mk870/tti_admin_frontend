@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { isEmpty } from "lodash";
 
 import { Avatar } from "components/visuals/avatar";
 import { Button } from "components/elements/button";

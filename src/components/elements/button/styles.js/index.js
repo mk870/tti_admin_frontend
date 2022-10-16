@@ -11,6 +11,9 @@ export const Button = styled.button`
   height: 3.1rem;
   border: none;
   box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.25);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     background-color: ${({ btnColor }) =>

@@ -29,3 +29,10 @@ export const Actions = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+export const Spinner = styled.div`
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

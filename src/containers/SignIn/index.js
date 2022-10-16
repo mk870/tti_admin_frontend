@@ -72,6 +72,7 @@ export const SignInComponent = ({ handleSignIn }) => {
                       onClick={handleSubmit}
                       type="submit"
                       disabled={isSubmitting}
+                      loading={isSubmitting}
                     >
                       Sign in
                     </Button>

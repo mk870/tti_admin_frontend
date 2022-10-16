@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { isNull } from "lodash";
 import PropTypes from "prop-types";
 import { Routes, Route, useNavigate } from "react-router-dom";
@@ -16,40 +16,48 @@ import * as styled from "./styles";
 
 const AppComponent = ({ user, handleFetchSession }) => {
   const navigate = useNavigate();
+  const token = localStorage.getItem("flaskJWTToken");
+  const [isFetchingSession, setFetchSession] = useState(false);
 
   useEffect(() => {
-    if (isNull(user)) {
+    if (isNull(user) && !token) {
       navigate("/sign-in");
     } else {
       navigate("/employees");
     }
-  }, []);
+  }, [user, token]);
 
   useEffect(() => {
-    const token = localStorage.getItem("flaskJWTToken");
     const logOutPath = false;
     if (!logOutPath && token) {
-      handleFetchSession();
+      setFetchSession(true);
+      handleFetchSession()
+        .then(() => setFetchSession(false))
+        .catch(() => setFetchSession(false));
     }
-  }, []);
+  }, [handleFetchSession, token]);
 
   return (
     <styled.Container>
       <styled.AppBody>
-        {user && <SideMenu />}
-        <Routes>
-          <Route exact path="sign-in" element={<SignIn />} />
+        {!isFetchingSession && (
+          <>
+            {user && <SideMenu />}
+            <Routes>
+              <Route exact path="sign-in" element={<SignIn />} />
 
-          <Route
-            path="employees/*"
-            element={
-              <ProtectedRoute user={user}>
-                <Employees />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-        <ToastContainer />
+              <Route
+                path="employees/*"
+                element={
+                  <ProtectedRoute user={user}>
+                    <Employees />
+                  </ProtectedRoute>
+                }
+              />
+            </Routes>
+            <ToastContainer />
+          </>
+        )}
       </styled.AppBody>
     </styled.Container>
   );
